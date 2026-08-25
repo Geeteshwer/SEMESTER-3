@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Calculator</title>
+    <style>
+        body{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container{
+    background: white;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 400px;
+}
+    </style>
+
+<body>
+
+<div class="container">
+    <h2>Student Result Calculator</h2>
+
+    <h2>Name: <input type="text" id="name" placeholder="Enter Student Name"></h2>
+
+    <p>First Subject: <input type="number" id="a" required></p>
+    <p>Second Subject: <input type="number" id="b" required></p>
+    <p>Third Subject: <input type="number" id="c" required></p>
+    <p>Fourth Subject: <input type="number" id="d" required></p>
+    <p>Fifth Subject: <input type="number" id="e" required></p>
+
+    <button id ="btn" onclick="calculate()">Calculate Result</button>
+
+    <h3 id="result"></h3>
+</div>
+
+<script>
+    function calculate(){
+
+    let name = document.getElementById("name").value;
+
+    let a= Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+    let c = Number(document.getElementById("c").value);
+    let d = Number(document.getElementById("d").value);
+    let e = Number(document.getElementById("e").value);
+
+    let total = (a+b+c+d+e)/5;
+
+    let grade;
+
+    if(total>=90)
+        grade="A+";
+    else if(total>=80)
+        grade="A";
+    else if(total>=70)
+        grade="B";
+    else if(total>=60)
+        grade="C";
+    else if(total>=50)
+        grade="D";
+    else if(total>40)
+        grade="E";
+    else{
+        grade="Fail"
+    }
+    
+
+    document.getElementById("result").innerHTML=
+    `
+    <h3>Result</h3>
+    Name: ${name} <br>
+    Percentage: ${total}% <br>
+    Grade: ${grade} <br>
+    `;
+}
+</script>
+
+</body>
+</html>
