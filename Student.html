@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information System</title>
+    <link rel="stylesheet" href="student.css">
+</head>
+<body>
+
+    <header>
+        <h1>Student Information System</h1>
+    </header>
+
+    <div class="container">
+        <div class="panel">
+            <h2>Add Student</h2>
+            <form id="studentForm">
+                <div class="form-grid">
+                    <div>
+                        <label for="rollNo">Roll Number</label>
+                        <input type="text" id="rollNo" required>
+                    </div>
+
+                    <div>
+                        <label for="studentName">Student Name</label>
+                        <input type="text" id="studentName" required>
+                    </div>
+
+                    <div>
+                        <label for="studentClass">Class</label>
+                        <input type="text" id="studentClass" required>
+                    </div>
+
+                    <div>
+                        <label for="section">Section</label>
+                        <select id="section" required>
+                            <option value="">Select Section</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div>
+                        <label for="phone">Phone</label>
+                        <input type="text" id="phone" required>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" class="add-btn">Add Student</button>
+                    <button type="reset" class="clear-btn">Clear</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="panel">
+            <h2>Student Records</h2>
+
+            <div class="table-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Roll No.</th>
+                            <th>Name</th>
+                            <th>Class</th>
+                            <th>Section</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
